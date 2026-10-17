@@ -34,7 +34,7 @@ export function VideoDetail() {
           <p className="font-mono text-[12px] text-accent">
             {video.platform} · {video.publisher} · {video.part}
           </p>
-          <h1 className="mt-4 font-serif text-4xl leading-[1.05] tracking-tight md:text-6xl">{video.title}</h1>
+          <h1 className="mt-4 text-balance break-words font-serif text-4xl leading-[1.05] tracking-tight md:text-6xl">{video.title}</h1>
 
           <dl className="mt-10 grid gap-x-8 gap-y-5 border-y border-rule py-6 text-[15px] sm:grid-cols-2">
             <div>

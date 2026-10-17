@@ -31,7 +31,7 @@ export function ExperienceTimeline({ items }: ExperienceTimelineProps) {
 
                 <div className="md:col-span-6">
                   <p className="font-mono text-[12px] text-accent">{exp.medium}</p>
-                  <h3 className="mt-1 font-serif text-3xl leading-tight md:text-[2.1rem]">{exp.organization}</h3>
+                  <h3 className="mt-1 break-words font-serif text-3xl leading-tight md:text-[2.1rem]">{exp.organization}</h3>
                   <ul className="mt-5 space-y-2.5">
                     {exp.missions.map((m) =>
                     <li key={m} className="flex gap-3 text-[16px] leading-snug">

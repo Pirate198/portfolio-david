@@ -12,13 +12,15 @@ export function About() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-16 pt-14 md:px-10 md:pt-20 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="font-mono text-[12px] text-accent">À propos</p>
-            <h1 className="mt-6 font-serif text-5xl leading-[1.02] tracking-tight md:text-7xl">
+            <h1 className="mt-6 text-balance font-serif text-5xl leading-[1.02] tracking-tight md:text-7xl">
               Raconter l'information, du terrain à l'antenne.
             </h1>
-            <div className="mt-10 max-w-2xl space-y-5 text-[18px] leading-relaxed">
+            <div className="mt-10 max-w-2xl space-y-5 text-pretty text-[18px] leading-relaxed">
               <p>
                 Yélian David BOURAIMA est journaliste reporter d'image, titulaire d'une licence
-                professionnelle JRI obtenue à l'ENSTIC de Cotonou en 2025.
+                professionnelle en Journalisme Reporter d'Image (JRI) à l'École Nationale des Sciences
+                et Techniques de l'Information et de la Communication de l'Université d'Abomey-Calavi
+                (ENSTIC-UAC) en 2025.
               </p>
               <p className="text-muted">
                 Depuis 2021, il s'est formé au contact de rédactions radio, télévision et presse écrite au
@@ -37,7 +39,7 @@ export function About() {
       {/* Étapes */}
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-10">
         <Reveal>
-          <h2 className="font-serif text-4xl tracking-tight md:text-5xl">Étapes du parcours</h2>
+          <h2 className="text-balance font-serif text-4xl tracking-tight md:text-5xl">Étapes du parcours</h2>
         </Reveal>
         <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-0">
           {milestones.map((m) =>
@@ -53,10 +55,10 @@ export function About() {
       <section className="border-y border-rule bg-paper-2">
         <div className="mx-auto grid max-w-7xl gap-14 px-5 py-20 md:px-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <h2 className="font-serif text-4xl tracking-tight">Domaines d'intervention</h2>
+            <h2 className="text-balance font-serif text-4xl tracking-tight">Domaines d'intervention</h2>
             <dl className="mt-8">
               {domains.map((d) =>
-              <div key={d.label} className="grid grid-cols-[120px_1fr] gap-4 border-t border-rule py-4">
+              <div key={d.label} className="grid grid-cols-1 gap-2 border-t border-rule py-4 sm:grid-cols-[120px_1fr] sm:gap-4">
                   <dt className="font-serif text-xl">{d.label}</dt>
                   <dd className="text-[15px] leading-snug text-muted">{d.detail}</dd>
                 </div>
@@ -65,7 +67,7 @@ export function About() {
           </div>
 
           <div className="lg:col-span-6 lg:col-start-7">
-            <h2 className="font-serif text-4xl tracking-tight">Compétences</h2>
+            <h2 className="text-balance font-serif text-4xl tracking-tight">Compétences</h2>
             <div className="mt-8 space-y-7">
               {skillGroups.map((g) =>
               <div key={g.label}>
@@ -90,14 +92,14 @@ export function About() {
 
       {/* Formation */}
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:px-10 lg:grid-cols-12">
-        <div className="lg:col-span-7">
-          <h2 className="font-serif text-4xl tracking-tight md:text-5xl">Formation</h2>
+        <div className="order-2 lg:order-1 lg:col-span-7">
+          <h2 className="text-balance font-serif text-4xl tracking-tight md:text-5xl">Formation</h2>
           <ul className="mt-8">
             {education.map((e) =>
             <li key={e.degree} className="grid gap-2 border-t border-ink py-6 sm:grid-cols-[90px_1fr]">
                 <span className="font-mono text-[13px] text-accent">{e.year}</span>
                 <div>
-                  <p className="font-serif text-2xl leading-tight">{e.degree}</p>
+                  <p className="break-words font-serif text-2xl leading-tight">{e.degree}</p>
                   <p className="mt-1 text-muted">{e.school}</p>
                 </div>
               </li>
@@ -110,7 +112,7 @@ export function About() {
             Détail des expériences <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
-        <div className="mx-auto w-full max-w-[360px] lg:col-span-4 lg:col-start-9">
+        <div className="order-1 mx-auto w-full max-w-[360px] lg:order-2 lg:col-span-4 lg:col-start-9">
           <Portrait src={photos.secondary} alt="Yélian David BOURAIMA en ensemble bleu" />
         </div>
       </section>

@@ -7,7 +7,7 @@ export const profile = {
   role: "Journaliste reporter d'image",
   location: "Cotonou, Bénin",
   intro:
-  "Diplômé de l'ENSTIC de Cotonou, Yélian David BOURAIMA a fait ses armes en radio, en télévision et en presse écrite : collecte d'informations, reportage de terrain, présentation et montage."
+  "Diplômé de l'École Nationale des Sciences et Techniques de l'Information et de la Communication de l'Université d'Abomey-Calavi, Yélian David BOURAIMA a fait ses armes en radio, en télévision et en presse écrite : collecte d'informations, reportage de terrain, présentation et montage."
 };
 
 export const contact: {
@@ -15,13 +15,13 @@ export const contact: {
   phone: string | null;
   cvUrl: string | null;
 } = {
-  email: null, // adresse e-mail professionnelle indiquée dans le CV
-  phone: null, // à renseigner uniquement si l'affichage public est souhaité
-  cvUrl: null // URL du PDF du CV une fois intégré au projet
+  email: "malickbouraima91@gmail.com", // adresse e-mail professionnelle
+  phone: "0155130702", // numéro affiché publiquement
+  cvUrl: "/CV_Yelian_David_BOURAIMA.pdf" // PDF du CV intégré au projet
 };
 
 export const photos = {
-  hero: "/WhatsApp_Image_2026-03-18_at_15.17.27.jpg",
+  hero: "/portrait-hero.jpeg",
   about: "/WhatsApp_Image_2026-03-18_at_15.17.28.jpg",
   secondary: "/WhatsApp_Image_2026-03-18_at_15.17.28_(1).jpg",
   credit: "Philippe Armel"
@@ -30,7 +30,7 @@ export const photos = {
 export const education = [
 {
   degree: "Licence professionnelle — Journaliste Reporter d'Image (JRI)",
-  school: "ENSTIC, Cotonou",
+  school: "ENSTIC-UAC, Abomey-Calavi",
   year: "2025"
 },
 {

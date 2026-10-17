@@ -18,7 +18,7 @@ export function VideoCover({ video, size = "large" }: VideoCoverProps) {
         {video.part && <span className="border border-paper/30 px-2 py-0.5">{video.part}</span>}
       </div>
       <p
-        className={`font-serif leading-[1.08] tracking-tight ${
+        className={`break-words font-serif leading-[1.08] tracking-tight ${
         size === "large" ? "text-3xl md:text-5xl" : "text-2xl md:text-3xl"}`
         }>
         

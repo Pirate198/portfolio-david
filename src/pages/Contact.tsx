@@ -7,17 +7,23 @@ import { contact, photos, profile } from "../data/profile";
 export function Contact() {
   return (
     <section className="mx-auto grid max-w-7xl gap-14 px-5 pb-24 pt-14 md:px-10 md:pt-20 lg:grid-cols-12">
-      <div className="lg:col-span-7">
+      <div className="order-1 lg:col-span-7 lg:col-start-1 lg:row-start-1">
         <p className="font-mono text-[12px] text-accent">Contact</p>
-        <h1 className="mt-6 font-serif text-5xl leading-[1.02] tracking-tight md:text-7xl">
+        <h1 className="mt-6 text-balance font-serif text-5xl leading-[1.02] tracking-tight md:text-7xl">
           Échangeons sur votre rédaction.
         </h1>
         <p className="mt-6 max-w-xl text-[18px] leading-relaxed text-muted">
           Chaînes de télévision, radios, médias numériques, maisons de production : pour une candidature ou
           une collaboration, contactez {profile.firstNames} {profile.lastName} directement.
         </p>
+      </div>
 
-        <dl className="mt-12 border-b border-ink">
+      <div className="order-2 mx-auto w-full max-w-[380px] lg:col-span-4 lg:col-start-9 lg:row-span-2 lg:row-start-1">
+        <Portrait src={photos.secondary} alt="Portrait de Yélian David BOURAIMA" />
+      </div>
+
+      <div className="order-3 lg:col-span-7 lg:col-start-1 lg:row-start-2">
+        <dl className="border-b border-ink">
           <div className="grid gap-2 border-t border-ink py-6 sm:grid-cols-[160px_1fr] sm:items-center">
             <dt className="flex items-center gap-2 text-[14px] text-muted">
               <MailIcon className="h-4 w-4" aria-hidden="true" /> E-mail
@@ -63,10 +69,6 @@ export function Contact() {
           <p className="font-mono text-[13px] text-muted">À compléter — CV au format PDF à intégrer pour le téléchargement.</p>
           }
         </div>
-      </div>
-
-      <div className="mx-auto w-full max-w-[380px] lg:col-span-4 lg:col-start-9">
-        <Portrait src={photos.secondary} alt="Portrait de Yélian David BOURAIMA" />
       </div>
     </section>);
 

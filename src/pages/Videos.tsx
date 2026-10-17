@@ -33,7 +33,7 @@ export function Videos() {
                       <p className="font-mono text-[12px] text-accent">
                         {v.platform} · {v.publisher} · {v.part}
                       </p>
-                      <h2 className="mt-3 font-serif text-3xl leading-tight md:text-4xl">{v.title}</h2>
+                      <h2 className="mt-3 text-balance break-words font-serif text-3xl leading-tight md:text-4xl">{v.title}</h2>
                       <p className="mt-5 text-[16px] leading-relaxed text-muted">
                         Des jeunes partagent leurs opinions, leurs expériences et leur perception des sorties
                         nocturnes. Une seconde partie annoncée doit présenter l'analyse d'un sociologue.

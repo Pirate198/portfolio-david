@@ -19,7 +19,7 @@ export function Layout() {
         Aller au contenu
       </a>
       <Header />
-      <main id="contenu" className="flex-1">
+      <main id="contenu" className="flex-1 scroll-mt-20">
         <Outlet />
       </main>
       <Footer />

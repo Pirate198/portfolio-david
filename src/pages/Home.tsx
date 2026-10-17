@@ -33,16 +33,16 @@ export function Home() {
               <span className="h-2 w-2 rounded-full bg-accent-soft" aria-hidden="true" />
               {profile.location}
             </p>
-            <h1 className="mt-6 font-serif text-[3.4rem] leading-[0.95] tracking-tight sm:text-7xl xl:text-[6.5rem]">
+            <h1 className="mt-6 text-balance font-serif text-[clamp(2.75rem,8vw,5.75rem)] leading-[0.95] tracking-tight">
               {profile.firstNames}
               <span className="block font-medium">{profile.lastName}</span>
             </h1>
             <p className="mt-6 font-serif text-2xl italic text-accent-soft md:text-3xl">{profile.role}</p>
-            <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-paper/75">{profile.intro}</p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <p className="mt-6 max-w-xl text-pretty text-[17px] leading-relaxed text-paper/75">{profile.intro}</p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 to="/reportages"
-                className="group inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-accent px-8 py-[0.9375rem] text-[15px] font-medium text-white transition-colors duration-150 hover:bg-paper hover:text-ink">
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-[0.9375rem] text-[15px] font-medium text-white transition-colors duration-150 hover:bg-paper hover:text-ink sm:w-auto sm:px-8">
                 
                 Découvrir mes reportages
                 <ArrowRightIcon className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" aria-hidden="true" />
@@ -50,7 +50,7 @@ export function Home() {
               <CvButton tone="dark" />
               <Link
                 to="/contact"
-                className="inline-flex items-center whitespace-nowrap rounded-full border border-paper/40 px-8 py-[0.9375rem] text-[15px] font-medium text-paper transition-colors duration-150 hover:border-paper">
+                className="inline-flex w-full items-center justify-center rounded-full border border-paper/40 px-6 py-[0.9375rem] text-[15px] font-medium text-paper transition-colors duration-150 hover:border-paper sm:w-auto sm:px-8">
                 
                 Me contacter
               </Link>
@@ -60,7 +60,7 @@ export function Home() {
           <div className="mx-auto w-full max-w-[420px] self-end pb-10 lg:col-span-5 lg:max-w-none lg:pb-14">
             <Portrait
               src={photos.hero}
-              alt="Portrait de Yélian David BOURAIMA en costume bleu marine"
+              alt="Portrait de Yélian David BOURAIMA, costume bleu marine, bras croisés"
               tone="dark"
               priority />
             
@@ -86,7 +86,7 @@ export function Home() {
       {featured &&
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
           <Reveal className="flex items-end justify-between gap-6">
-            <h2 className="font-serif text-4xl tracking-tight md:text-6xl">Réalisations</h2>
+            <h2 className="text-balance font-serif text-4xl tracking-tight md:text-6xl">Réalisations</h2>
             <Link
             to="/reportages"
             className="hidden items-center gap-1.5 whitespace-nowrap text-[15px] font-medium underline decoration-accent underline-offset-4 sm:inline-flex">
@@ -141,7 +141,7 @@ export function Home() {
       <section className="border-t border-rule bg-paper-2">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-24">
           <Reveal className="grid gap-6 md:grid-cols-12">
-            <h2 className="font-serif text-4xl tracking-tight md:col-span-5 md:text-5xl">
+            <h2 className="text-balance font-serif text-4xl tracking-tight md:col-span-5 md:text-5xl">
               Radio, télévision, presse écrite
             </h2>
             <p className="text-[17px] leading-relaxed text-muted md:col-span-6 md:col-start-7">
@@ -182,19 +182,19 @@ export function Home() {
       {/* Audio */}
       <section className="bg-ink-2 text-paper">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:grid-cols-12 md:px-10">
-          <Reveal className="md:col-span-6">
+          <Reveal className="min-w-0 md:col-span-6">
             <HeadphonesIcon className="h-7 w-7 text-accent-soft" aria-hidden="true" />
-            <h2 className="mt-5 font-serif text-4xl tracking-tight md:text-5xl">Productions audio</h2>
+            <h2 className="mt-5 text-balance font-serif text-4xl tracking-tight md:text-5xl">Productions audio</h2>
             <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-paper/75">
               Bulletins, reportages et magazines radiophoniques : la radio occupe une place centrale dans
               son parcours, de KIFF FM à Planète FM.
             </p>
           </Reveal>
-          <Reveal className="flex flex-col justify-end md:col-span-5 md:col-start-8">
+          <Reveal className="flex min-w-0 flex-col justify-end md:col-span-5 md:col-start-8">
             <ul className="border-t border-white/20">
               {audioProductions.map((a) =>
               <li key={a.id} className="flex items-center justify-between gap-4 border-b border-white/20 py-4">
-                  <span className="truncate font-mono text-[13px] text-paper/80">{a.title ?? a.fileName}</span>
+                  <span className="min-w-0 truncate font-mono text-[13px] text-paper/80">{a.title ?? a.fileName}</span>
                   <span className="shrink-0 text-[12px] text-paper/55">{a.src ? "Disponible" : "En préparation"}</span>
                 </li>
               )}
@@ -212,7 +212,7 @@ export function Home() {
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32">
         <Reveal className="grid items-end gap-10 md:grid-cols-12">
-          <h2 className="font-serif text-5xl leading-[1.02] tracking-tight md:col-span-8 md:text-7xl">
+          <h2 className="text-balance font-serif text-5xl leading-[1.02] tracking-tight md:col-span-8 md:text-7xl">
             Votre rédaction recrute <em className="text-accent">un JRI</em>&nbsp;?
           </h2>
           <div className="flex flex-col gap-3 md:col-span-4">
