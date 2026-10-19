@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRightIcon, ArrowUpRightIcon } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 import { PageIntro } from "../components/PageIntro";
 import { VideoCover } from "../components/VideoCover";
 import { Reveal } from "../components/Reveal";
@@ -31,13 +31,12 @@ export function Videos() {
                     </Link>
                     <div className="flex flex-col lg:col-span-5">
                       <p className="font-mono text-[12px] text-accent">
-                        {v.platform} · {v.publisher} · {v.part}
+                        {[v.platform, v.publisher, v.part].filter(Boolean).join(" · ")}
                       </p>
                       <h2 className="mt-3 text-balance break-words font-serif text-3xl leading-tight md:text-4xl">{v.title}</h2>
-                      <p className="mt-5 text-[16px] leading-relaxed text-muted">
-                        Des jeunes partagent leurs opinions, leurs expériences et leur perception des sorties
-                        nocturnes. Une seconde partie annoncée doit présenter l'analyse d'un sociologue.
-                      </p>
+                      {v.description &&
+                      <p className="mt-5 text-[16px] leading-relaxed text-muted">{v.description}</p>
+                      }
                       <dl className="mt-6 space-y-2 border-t border-rule pt-5 text-[14px]">
                         <div className="flex gap-3">
                           <dt className="w-28 shrink-0 text-muted">Format</dt>
@@ -55,14 +54,6 @@ export function Videos() {
                       
                           Regarder et lire la fiche <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
                         </Link>
-                        <a
-                      href={v.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-muted hover:text-ink">
-                      
-                          Ouvrir sur TikTok <ArrowUpRightIcon className="h-4 w-4" aria-hidden="true" />
-                        </a>
                       </div>
                     </div>
                   </article>

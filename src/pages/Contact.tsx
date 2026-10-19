@@ -1,6 +1,5 @@
 import React from "react";
 import { ArrowUpRightIcon, MailIcon, PhoneIcon } from "lucide-react";
-import { CvButton } from "../components/CvButton";
 import { Portrait } from "../components/Portrait";
 import { contact, photos, profile } from "../data/profile";
 
@@ -61,14 +60,6 @@ export function Contact() {
             <dd className="font-serif text-2xl">{profile.location}</dd>
           </div>
         </dl>
-
-        <div className="mt-10">
-          {contact.cvUrl ?
-          <CvButton /> :
-
-          <p className="font-mono text-[13px] text-muted">À compléter — CV au format PDF à intégrer pour le téléchargement.</p>
-          }
-        </div>
       </div>
     </section>);
 

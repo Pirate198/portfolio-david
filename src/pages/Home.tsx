@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRightIcon, ArrowUpRightIcon, HeadphonesIcon } from "lucide-react";
+import { ArrowRightIcon, HeadphonesIcon } from "lucide-react";
 import { Portrait } from "../components/Portrait";
 import { CvButton } from "../components/CvButton";
 import { VideoCover } from "../components/VideoCover";
@@ -48,12 +48,6 @@ export function Home() {
                 <ArrowRightIcon className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" aria-hidden="true" />
               </Link>
               <CvButton tone="dark" />
-              <Link
-                to="/contact"
-                className="inline-flex w-full items-center justify-center rounded-full border border-paper/40 px-6 py-[0.9375rem] text-[15px] font-medium text-paper transition-colors duration-150 hover:border-paper sm:w-auto sm:px-8">
-                
-                Me contacter
-              </Link>
             </div>
           </motion.div>
 
@@ -104,14 +98,17 @@ export function Home() {
               <VideoCover video={featured} />
             </Link>
             <div className="flex flex-col lg:col-span-5">
-              <p className="font-mono text-[12px] text-accent">Reportage vidéo · {featured.part}</p>
-              <h3 className="mt-3 font-serif text-3xl leading-tight">
-                Sorties nocturnes des jeunes
-              </h3>
-              <p className="mt-4 text-[16px] leading-relaxed text-muted">
-                Rencontre avec des jeunes pour recueillir leurs opinions, leurs expériences et leur
-                perception des sorties nocturnes. Publié sur le compte TikTok « {featured.publisher} ».
+              <p className="font-mono text-[12px] text-accent">
+                {["Reportage vidéo", featured.platform, featured.part].filter(Boolean).join(" · ")}
               </p>
+              <h3 className="mt-3 font-serif text-3xl leading-tight">
+                {featured.title}
+              </h3>
+              {featured.description &&
+              <p className="mt-4 text-[16px] leading-relaxed text-muted">
+                {featured.description}
+              </p>
+              }
               <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-rule pt-5 text-[14px]">
                 <div>
                   <dt className="text-muted">Format</dt>
@@ -120,7 +117,7 @@ export function Home() {
                 <div>
                   <dt className="text-muted">Diffusion</dt>
                   <dd className="mt-1">
-                    {featured.platform} · {featured.publisherHandle}
+                    {featured.platform} — {featured.publisher}
                   </dd>
                 </div>
               </dl>
@@ -128,9 +125,6 @@ export function Home() {
                 <Link to={`/reportages/${featured.slug}`} className="inline-flex items-center gap-1.5 underline decoration-accent underline-offset-4">
                   Voir le reportage <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
                 </Link>
-                <a href={featured.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-muted hover:text-ink">
-                  TikTok <ArrowUpRightIcon className="h-4 w-4" aria-hidden="true" />
-                </a>
               </div>
             </div>
           </Reveal>

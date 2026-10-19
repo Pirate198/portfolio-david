@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeftIcon, ArrowUpRightIcon } from "lucide-react";
-import { TikTokEmbed } from "../components/TikTokEmbed";
+import { VideoPlayer } from "../components/VideoPlayer";
 import { PendingNote } from "../components/PendingNote";
 import { videos } from "../data/videos";
 
@@ -32,7 +32,7 @@ export function VideoDetail() {
       <div className="mt-10 grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <p className="font-mono text-[12px] text-accent">
-            {video.platform} · {video.publisher} · {video.part}
+            {[video.platform, video.publisher, video.part].filter(Boolean).join(" · ")}
           </p>
           <h1 className="mt-4 text-balance break-words font-serif text-4xl leading-[1.05] tracking-tight md:text-6xl">{video.title}</h1>
 
@@ -44,7 +44,8 @@ export function VideoDetail() {
             <div>
               <dt className="text-muted">Diffusion</dt>
               <dd className="mt-1">
-                {video.platform} — {video.publisher} ({video.publisherHandle})
+                {video.platform} — {video.publisher}
+                {video.publisherHandle ? ` (${video.publisherHandle})` : ""}
               </dd>
             </div>
             <div>
@@ -57,6 +58,7 @@ export function VideoDetail() {
             </div>
           </dl>
 
+          {video.description &&
           <section className="mt-10" aria-labelledby="desc-title">
             <h2 id="desc-title" className="font-mono text-[12px] uppercase tracking-wider text-muted">
               Description publiée avec la vidéo
@@ -65,6 +67,7 @@ export function VideoDetail() {
               {video.description}
             </blockquote>
           </section>
+          }
 
           {!video.role &&
           <PendingNote className="mt-10 max-w-xl">
@@ -72,6 +75,7 @@ export function VideoDetail() {
             </PendingNote>
           }
 
+          {video.url &&
           <a
             href={video.url}
             target="_blank"
@@ -80,11 +84,12 @@ export function VideoDetail() {
             
             Voir la publication originale <ArrowUpRightIcon className="h-4 w-4" aria-hidden="true" />
           </a>
+          }
         </div>
 
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-24">
-            <TikTokEmbed video={video} />
+            <VideoPlayer video={video} />
           </div>
         </div>
       </div>

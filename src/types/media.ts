@@ -5,12 +5,12 @@ export type VideoReport = {
   format: string;
   platform: string;
   publisher: string;
-  publisherHandle: string;
-  description: string;
+  publisherHandle: string | null;
+  description: string | null;
   date: string | null;
   role: string | null;
-  url: string;
-  embedId: string;
+  url: string | null;
+  src: string;
 };
 
 export type AudioProduction = {

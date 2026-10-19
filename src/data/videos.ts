@@ -1,21 +1,48 @@
 import type { VideoReport } from "../types/media";
 
-// Informations issues des métadonnées publiques de la publication TikTok.
-// Date de publication et rôle exact de Yélian : à confirmer.
+// Reportages diffusés sur Télévision Carrefour (TVC).
 export const videos: VideoReport[] = [
 {
-  slug: "sorties-nocturnes-des-jeunes",
-  title:
-  "Sorties nocturnes des jeunes : expression de liberté ou moyen d'échapper à la tutelle parentale ?",
-  part: "Partie 1",
-  format: "Vidéo courte — témoignages de jeunes",
-  platform: "TikTok",
-  publisher: "A CŒUR NU",
-  publisherHandle: "@coeurnu12",
+  slug: "cancer-du-sein-mae",
+  title: "Cancer du sein — sujet MAE",
+  part: null,
+  format: "Reportage — journal télévisé",
+  platform: "Télévision",
+  publisher: "Télévision Carrefour (TVC)",
+  publisherHandle: null,
   description:
-  "Dans le cadre de notre réflexion sur les sorties nocturnes des jeunes : expression de liberté ou moyen d'échapper à la tutelle parentale ?, nous sommes allés à la rencontre de quelques jeunes afin de recueillir leurs opinions, leurs expériences et leur perception de cette réalité. Découvrez leurs différents points de vue dans cette première partie. Rendez-vous dans la partie 2 pour découvrir la réponse et l'analyse de notre sociologue sur cette question qui suscite de nombreux débats.",
-  date: "1/10/2026",
-  role: null,
-  url: "https://www.tiktok.com/@coeurnu12/video/7691752335290158358",
-  embedId: "7691752335290158358"
+  "Sujet consacré au cancer du sein, diffusé dans le journal télévisé.",
+  date: "31/10/2025",
+  role: "Montage et rédaction des commentaires",
+  url: null,
+  src: "/videos/jt-cancer-du-sein-mae.mp4"
+},
+{
+  slug: "mestfp-renforcement-des-departements",
+  title: "MESTFP — Renforcement des départements dans leurs missions",
+  part: null,
+  format: "Reportage — journal télévisé",
+  platform: "Télévision",
+  publisher: "Télévision Carrefour (TVC)",
+  publisherHandle: null,
+  description:
+  "Sujet consacré au renforcement des départements dans leurs missions (MESTFP), diffusé dans le journal télévisé.",
+  date: "Septembre 2025",
+  role: "Montage et rédaction des commentaires",
+  url: null,
+  src: "/videos/jt-mestfp-renforcement-departements.mp4"
+},
+{
+  slug: "ifb",
+  title: "IFB — journal télévisé",
+  part: null,
+  format: "Reportage — journal télévisé",
+  platform: "Télévision",
+  publisher: "Télévision Carrefour (TVC)",
+  publisherHandle: null,
+  description: "Édition du journal télévisé IFB.",
+  date: "Septembre 2025",
+  role: "Montage et rédaction des commentaires",
+  url: null,
+  src: "/videos/jt-ifb.mp4"
 }];

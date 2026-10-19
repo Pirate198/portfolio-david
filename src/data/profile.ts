@@ -16,7 +16,7 @@ export const contact: {
   cvUrl: string | null;
 } = {
   email: "malickbouraima91@gmail.com", // adresse e-mail professionnelle
-  phone: "0155130702", // numéro affiché publiquement
+  phone: "+229 0155130702", // numéro affiché publiquement
   cvUrl: "/CV_Yelian_David_BOURAIMA.pdf" // PDF du CV intégré au projet
 };
 
